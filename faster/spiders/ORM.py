@@ -14,8 +14,7 @@ from sqlalchemy import Column, Integer, String, Boolean, DateTime, Text
 from sqlalchemy.orm import sessionmaker
 Base = declarative_base()
 
-if os.environ.get('DATABASE') != None:
-  connectionString = os.environ.get('DATABASE')
+connectionString = os.environ.get('ASAF_DATABASE')
 
 engine = create_engine(connectionString, echo=False)
 
